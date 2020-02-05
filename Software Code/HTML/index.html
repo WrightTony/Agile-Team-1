@@ -56,30 +56,41 @@
 
               <p style ="height:3px;"> </p>
 
+              <!-- Checkbox -->
               <div class="checkbox"style="margin-left:2rem">
-                <label><input type="checkbox" value=""> Use your current location</label>
+                <label><input type="checkbox" onclick="checkboxClickSearch()" value=""> Use your current location</label>
               </div>
+              <script>
+              function checkboxClickSearch() {
+                //disable address and zip search boxes when using device location
+                document.getElementById("addressInputSearch").disabled = !document.getElementById("addressInputSearch").disabled;
+                document.getElementById("zipInputSearch").disabled = !document.getElementById("zipInputSearch").disabled;
+                //clear any input that is already in the box
+                document.getElementById('addressInputSearch').value = '';
+                document.getElementById('zipInputSearch').value = '';
+              }
+              </script>
 
               <form class="form-inline" style="margin-left:2rem">
 
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by hospital name..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="nameInput">
+                  <input class="form-control" type="text" placeholder="Search by hospital name..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="nameInputSearch">
                 </div>
 
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by address..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="addressInput">
+                  <input class="form-control" type="text" placeholder="Search by address..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="addressInputSearch">
                 </div>
 
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by zip code..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="zipInput">
+                  <input class="form-control" type="text" placeholder="Search by zip code..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="zipInputSearch">
                 </div>
 
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by procedure name..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="procedureNameInput">
+                  <input class="form-control" type="text" placeholder="Search by procedure name..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="procedureNameInputSearch">
                 </div>
 
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by procedure code..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem" id="procedureCodeInput">
+                  <input class="form-control" type="text" placeholder="Search by procedure code..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem" id="procedureCodeInputSearch">
                 </div>
               </form>
 
@@ -99,30 +110,42 @@
 
               <p style ="height:3px;"> </p>
 
+              <!-- Checkbox -->
               <div class="checkbox"style="margin-left:2rem">
-                <label><input type="checkbox" value=""> Use your current location</label>
+                <label><input type="checkbox" onclick="checkboxClickFilter()" value=""> Use your current location</label>
               </div>
+
+              <script>
+              function checkboxClickFilter() {
+                // dissable address and zip search boxes if they are not already disabled
+                document.getElementById("addressInputFilter").disabled = !document.getElementById("addressInputFilter").disabled;
+                document.getElementById("zipInputFilter").disabled = !document.getElementById("zipInputFilter").disabled;
+                //clear any input that is already in the box
+                document.getElementById('addressInputFilter').value = '';
+                document.getElementById('zipInputFilter').value = '';
+              }
+              </script>
 
               <form class="form-inline" style="margin-left:2rem">
 
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by hospital name..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="nameInput">
+                  <input class="form-control" type="text" placeholder="Search by hospital name..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="nameInputFilter">
                 </div>
 
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by address..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="addressInput">
+                  <input class="form-control" type="text" placeholder="Search by address..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="addressInputFilter">
                 </div>
 
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by zip code..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="zipInput">
+                  <input class="form-control" type="text" placeholder="Search by zip code..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="zipInputFilter">
                 </div>
 
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by procedure name..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="procedureNameInput">
+                  <input class="form-control" type="text" placeholder="Search by procedure name..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="procedureNameInputFilter">
                 </div>
 
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by procedure code..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem" id="procedureCodeInput">
+                  <input class="form-control" type="text" placeholder="Search by procedure code..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem" id="procedureCodeInputFilter">
                 </div>
               </form>
 
