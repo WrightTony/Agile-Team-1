@@ -477,7 +477,7 @@ public class Database {
     /**
      * This method runs a stored procedure to search a hospital name and returns the results 
      * 
-     * @param city The city the user wants to look for
+     * @param name The hospital name the user wants to look for
      * @param con The connection to the db server
      * @return the results of the query
      */

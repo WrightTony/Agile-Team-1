@@ -342,12 +342,9 @@
                     zipSearch = request.getParameterValues("zipInputSearch");
                 }
                 
+                
                 if(request.getParameterValues("procedureNameInputSearch")!= null){
                     procedureSearch = request.getParameterValues("procedureNameInputSearch");
-                }
-                
-                if(request.getParameterValues("procedureCodeInputSearch")!= null){
-                    procedureSearch = request.getParameterValues("procedureCodeInputSearch");
                 }
             
             if(addressSearch[0]=="" && nameSearch[0]=="" && zipSearch[0]=="" && procedureSearch[0]==""){
@@ -364,24 +361,22 @@
                         counter = 0;
                         if(result!=null){
                         while(result.next() && counter<10){
+                            
+                        
+                            %>
+                            <h1>test</h1>
+                            <div class ="container p-3 my-3 border">
+                                <div class ="row">
+                                    <h1><%= result.getString("providerName") %></h1>
+                              <p><%= result.getString("providerStreetAddress") %></p>
+                                </div>
 
-
-                        %>
-                        <h1>test</h1>
-                        <div class ="container p-3 my-3 border">
-                            <div class ="row">
-                                <h1><%= result.getString("providerName") %></h1>
-                          <p><%= result.getString("providerStreetAddress") %></p>
-                          <p><%= result.getString("HRRDescription")%></p>
-                          <p>Average medical care payments: $<%= result.getDouble("Average_Medicare_Payments")%></p>
                             </div>
 
-                        </div>
-
                             <% counter++;
-                            }
+                            
                         }
-                        
+                        }
                     }
                     if(zipSearch[0]!=""){
                         int i = Integer.parseInt(zipSearch[0]);
@@ -398,8 +393,6 @@
                             <div class ="row">
                                 <h1><%= result.getString("providerName") %></h1>
                           <p><%= result.getString("providerStreetAddress") %></p>
-                          <p><%= result.getString("HRRDescription")%></p>
-                          <p>Average medical care payments: $<%= result.getDouble("Average_Medicare_Payments")%></p>
                             </div>
 
                         </div>
@@ -421,7 +414,7 @@
                             <div class ="row">
                                 <h1><%= result.getString("providerName") %></h1>
                           <p><%= result.getString("providerStreetAddress") %></p>
-                          <p><%= result.getString("HRRDescription")%></p>
+                          <p><%= result.getString("DRG_Definition")%></p>
                           <p>Average medical care payments: $<%= result.getDouble("Average_Medicare_Payments")%></p>
                             </div>
 
@@ -444,8 +437,6 @@
                             <div class ="row">
                                 <h1><%= result.getString("providerName") %></h1>
                           <p><%= result.getString("providerStreetAddress") %></p>
-                          <p><%= result.getString("HRRDescription")%></p>
-                          <p>Average medical care payments: $<%= result.getDouble("Average_Medicare_Payments")%></p>
                             </div>
 
                         </div>

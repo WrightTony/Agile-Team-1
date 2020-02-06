@@ -393,12 +393,9 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
                     zipSearch = request.getParameterValues("zipInputSearch");
                 }
                 
+                
                 if(request.getParameterValues("procedureNameInputSearch")!= null){
                     procedureSearch = request.getParameterValues("procedureNameInputSearch");
-                }
-                
-                if(request.getParameterValues("procedureCodeInputSearch")!= null){
-                    procedureSearch = request.getParameterValues("procedureCodeInputSearch");
                 }
             
             if(addressSearch[0]=="" && nameSearch[0]=="" && zipSearch[0]=="" && procedureSearch[0]==""){
@@ -415,34 +412,28 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
                         counter = 0;
                         if(result!=null){
                         while(result.next() && counter<10){
-
-
+                            
                         
+                            
       out.write("\n");
-      out.write("                        <h1>test</h1>\n");
-      out.write("                        <div class =\"container p-3 my-3 border\">\n");
-      out.write("                            <div class =\"row\">\n");
-      out.write("                                <h1>");
+      out.write("                            <h1>test</h1>\n");
+      out.write("                            <div class =\"container p-3 my-3 border\">\n");
+      out.write("                                <div class =\"row\">\n");
+      out.write("                                    <h1>");
       out.print( result.getString("providerName") );
       out.write("</h1>\n");
-      out.write("                          <p>");
+      out.write("                              <p>");
       out.print( result.getString("providerStreetAddress") );
       out.write("</p>\n");
-      out.write("                          <p>");
-      out.print( result.getString("HRRDescription"));
-      out.write("</p>\n");
-      out.write("                          <p>Average medical care payments: $");
-      out.print( result.getDouble("Average_Medicare_Payments"));
-      out.write("</p>\n");
-      out.write("                            </div>\n");
+      out.write("                                </div>\n");
       out.write("\n");
-      out.write("                        </div>\n");
+      out.write("                            </div>\n");
       out.write("\n");
       out.write("                            ");
  counter++;
-                            }
+                            
                         }
-                        
+                        }
                     }
                     if(zipSearch[0]!=""){
                         int i = Integer.parseInt(zipSearch[0]);
@@ -463,12 +454,6 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("</h1>\n");
       out.write("                          <p>");
       out.print( result.getString("providerStreetAddress") );
-      out.write("</p>\n");
-      out.write("                          <p>");
-      out.print( result.getString("HRRDescription"));
-      out.write("</p>\n");
-      out.write("                          <p>Average medical care payments: $");
-      out.print( result.getDouble("Average_Medicare_Payments"));
       out.write("</p>\n");
       out.write("                            </div>\n");
       out.write("\n");
@@ -498,7 +483,7 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.print( result.getString("providerStreetAddress") );
       out.write("</p>\n");
       out.write("                          <p>");
-      out.print( result.getString("HRRDescription"));
+      out.print( result.getString("DRG_Definition"));
       out.write("</p>\n");
       out.write("                          <p>Average medical care payments: $");
       out.print( result.getDouble("Average_Medicare_Payments"));
@@ -529,12 +514,6 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("</h1>\n");
       out.write("                          <p>");
       out.print( result.getString("providerStreetAddress") );
-      out.write("</p>\n");
-      out.write("                          <p>");
-      out.print( result.getString("HRRDescription"));
-      out.write("</p>\n");
-      out.write("                          <p>Average medical care payments: $");
-      out.print( result.getDouble("Average_Medicare_Payments"));
       out.write("</p>\n");
       out.write("                            </div>\n");
       out.write("\n");
