@@ -1,6 +1,12 @@
 import java.io.*;
 import java.util.*;
 import java.lang.*;
+/* Create a set of functions that allow the user to add, delete and edit information in the list
+ * 
+ * @author Ben Morrison
+ * Documentation of Tests
+ * https://docs.google.com/document/d/1q5E6EzfeNtdjsO2ruahbp-dBGvA9csDSkhDLcq9gm-c/edit?usp=sharing
+ */
 public class main{
     
     String[] listTerm = {"DRG Definition - ", "Provider ID - ", "Provider Name - ", "Provider Address - ", "Provider City - ", "Provider State - ", "Provider Zipcode - ", "HRR Description - ", "Total Discharges - ", "Average Covered Charges - ", "Average Total Payments - ", "Average Medicare Payments - ", ""};
@@ -182,13 +188,24 @@ public class main{
                 if(IDIndex[i] == locIndex){//If the indexes match up, the edited line is entered into the list 
                     aList.set(IDIndex[i], editedLine);
                 }
-            }else{//If no values have been found, the program throws an error
-                System.out.println("Error. No values entered have been found. Values are incorrect.");
             }
         }
         //Prints the new edited list
         for(ArrayList<String> b : aList){
             System.out.println(b);
         }
+    }
+    
+    public void printMultiArray(String[][] array){
+        for(int i = 0; i < array.length; i++){
+            for(int j = 0; j < array[i].length; j++){
+                System.out.print(array[i][j]);
+                System.out.println();
+            }
+        }
+    }
+    
+    public void quickPrint(){
+        printMultiArray(list);
     }
 }
