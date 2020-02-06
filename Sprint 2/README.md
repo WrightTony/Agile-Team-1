@@ -14,7 +14,7 @@ Jodie: Continued implementing the search/sort by distance feature and conecting 
 
 The sprint retrospective needs to be started, so the we have a better idea of what is left to be done and how to approach sprint two
 
-Day [2] - Scrum Meeting summary The Scrum Master for this meeting was Tony Wright
+#Day [2] - Scrum Meeting summary The Scrum Master for this meeting was Tony Wright
 
 Members Present: Michael, Jodie, Benjamin, Tony, Joel
 
@@ -59,9 +59,8 @@ What will you do? - Redesign the website to fit the response from the client in 
 
 Are there any imparements? - Servlet method will not be viable to intergrate all other functionalities with the website, a quicker and simpler method needs to be found - task passed to someone with more skills in the area
 
-#Sprint 2 All information about the second sprint can be found in this folder.
 
-Day [3] - Scrum Meeting summary The Scrum Master for this meeting was Jodie Laurenson
+#Day [3] - Scrum Meeting summary The Scrum Master for this meeting was Tony Wright
 
 Members Present: Jodie, Benjamin, Dimitar, Tony, Joel
 
@@ -118,3 +117,64 @@ Tony:
   
 - Are there any imparements?
   None
+
+
+# Day [4] - Scrum Meeting summary The Scrum Master for this meeting was Tony Wright
+
+Members Present: Jodie, Benjamin, Dimitar, Tony, Joel
+
+Members Not Present: Michael
+
+Summary of Conversation:
+
+Final discussions before the deadline tomorrow,
+
+Joel:
+- What did you do?
+  Working on displaying additional details
+  
+- What will you do?
+  continue working on that, then merge into working website branch
+  
+- Are there any imparements?
+  None
+  
+Dimitar:
+- What did you do?
+  Working on screen reader functionality and text resize
+  
+- What will you do?
+  Continue working on that
+  
+- Are there any imparements?
+  None
+
+Benjamin:
+- What did you do?
+  Continuing with extra features like adding to the database through the website
+  
+- What will you do?
+  Continue working on that
+  
+- Are there any imparements?
+  None
+  
+Jodie:
+- What did you do?
+  Working with Tony on search functionality for the website
+  
+- What will you do?
+  Continue working until we get a working search for the website
+  
+- Are there any imparements?
+  JSP intergration is taking much longer than we anticipated, however we are confident we will have it working by tomorrow
+  
+Tony:
+- What did you do?
+  Working with Jodie on priority tasks, merging the Java with the HTML using JSP, currently not working but making progress
+  
+- What will you do?
+  Continue until we have a working search for the website
+  
+- Are there any imparements?
+  JSP intergration is taking much longer than we anticipated, however we are confident we will have it working by tomorrow
