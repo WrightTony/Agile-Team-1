@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body> 
 
 <!-- search options left-->
   <div class="container-fluid">
