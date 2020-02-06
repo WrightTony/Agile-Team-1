@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,6 +12,7 @@
   <title>Craneware</title>
 
 </head>
+
 
 <body>
 
@@ -79,9 +80,9 @@
                   x.innerHTML = "Geolocation is not supported by this browser.";
                 }
               }
-              
+
               // position.coords.latitude is the latitude
-              // position.coord.longitude is the longitude
+              // position.coords.longitude is the longitude
               function showPosition(position) {
                 //x.innerHTML = "Latitude: " + position.coords.latitude + 
                 //"<br>Longitude: " + position.coords.longitude;
@@ -349,7 +350,10 @@
 
                    var searchResultProcedureArray = ["001 - HEART TRANSPLANT OR IMPLANT OF HEART ASSIST SYSTEM W MCC", "001 - HEART TRANSPLANT OR IMPLANT OF HEART ASSIST SYSTEM W MCC", "001 - HEART TRANSPLANT OR IMPLANT OF HEART ASSIST SYSTEM W MCC"];
 
-                   var searchResultPaymentsArray = ["£121763.31", "£164459.68", "£160234.88"];
+                   var searchResultPaymentsArray = ["$121763.31", "$164459.68", "$160234.88"];
+
+                   var searchResultDistanceArray = ["92 Miles", "1561 Miles", "287 Miles"];
+
 
                    for (var i in searchResultNameArray) {
 
@@ -361,26 +365,27 @@
                        var name = document.createElement("h2");
                        var newName = document.createTextNode(searchResultNameArray[i]);
                        name.appendChild(newName);
-
                        newDiv.appendChild(name);
 
                        var address = document.createElement("p");
                        var newAddress = document.createTextNode(searchResultAddressArray[i]);
                        address.appendChild(newAddress);
-
                        newDiv.appendChild(address);
 
                        var procedure = document.createElement("p");
                        var newProcedure = document.createTextNode(searchResultProcedureArray[i]);
                        procedure.appendChild(newProcedure);
-
                        newDiv.appendChild(procedure);
 
-                       var name = document.createElement("p");
-                       var newName = document.createTextNode(searchResultNameArray[i]);
-                       name.appendChild(newName);
+                       var payment = document.createElement("p");
+                       var newPayment = document.createTextNode(searchResultPaymentArray[i]);
+                       payment.appendChild(newPayment);
+                       newDiv.appendChild(payment);
 
-                       newDiv.appendChild(name);
+                       var distance = document.createElement("p");
+                       var newDistance = document.createTextNode(searchResultDistanceArray[i]);
+                       name.appendChild(newDistance);
+                       newDiv.appendChild(distance);
 
                        var currentDiv = document.getElementById("searchResults");
 
