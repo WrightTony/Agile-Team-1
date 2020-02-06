@@ -96,12 +96,9 @@
                   <input class="form-control" type="text" placeholder="procedure name..." aria-label="Search" style="width: 15rem; margin-left: 0.5rem;" id="procedureNameInputSearch" name="procedureNameInputSearch">
                 </div>
 
-                <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="procedure code..." aria-label="Search" style="width: 15rem; margin-left: 0.5rem" id="procedureCodeInputSearch" name="procedureCodeInputSearch">
-                </div>
                <p></p>
                   <!-- Search button -->
-              <p style = "text-align:center;"><button type="submit" value="javaServerJSP" class="btn btn-outline-primary" style="width:220px">Search</button></p>
+              <p style = "text-align:center;"><button type="submit" value="javaServerJSP" class="btn btn-outline-primary" style="width:220px; margin-left: 0.5rem; margin-top: 1rem" >Search</button></p>
               </form>
 
               
@@ -150,31 +147,20 @@
                 </div>
 
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by procedure name..." aria-label="Search" style="width: 15rem; margin-left: 0.5rem;" id="procedureNameInputFilter">
+                  <input class="form-control" type="text" placeholder="Search by procedure name/code..." aria-label="Search" style="width: 15rem; margin-left: 0.5rem;" id="procedureNameInputFilter">
                 </div>
 
-                <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by procedure code..." aria-label="Search" style="width: 15rem; margin-left: 0.5rem" id="procedureCodeInputFilter">
-                </div>
               </form>
 
               <p></p>
 
               <h4>Filter</h4>
 
-              <!-- dropdown select price range -->
+              <!-- select price range -->
 
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">$</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Maximum Price..." aria-label="Amount (to the nearest pound)">
-                    <div class="input-group-append">
-                      <span class="input-group-text">.00</span>
-                    </div>
                   </div>
                   <input type="text" class="form-control" placeholder="Maximum Price..." aria-label="Amount (to the nearest pound)">
                   <div class="input-group-append">
@@ -185,7 +171,7 @@
                 <p></p>
 
 
-                <!-- dropdown select distance range -->
+                <!-- select distance range -->
               <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Maximum Distance..." aria-label="Maximum Distance" aria-describedby="basic-addon2">
                 <div class="input-group-append">
@@ -229,8 +215,7 @@
                 <p></p>
 
 
-
-            </div>
+                </div>
 
             <!-- Best For You tab -->
             <div class="tab-pane fade" id="bestForYou" role="tabpanel" aria-labelledby="bestForYou-tab">
@@ -265,9 +250,6 @@
                   <input class="form-control" type="text" placeholder="Search by procedure name..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem;" id="procedureNameInput">
                 </div>
 
-                <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by procedure code..." aria-label="Search" style="width: 18rem; margin-left: 0.5rem" id="procedureCodeInput">
-                </div>
               </form>
 
               <p></p>
@@ -300,7 +282,7 @@
 
 
             </div>
-          </div>
+          
 
           </div>
             </div>
@@ -312,12 +294,14 @@
           </div>
 
           <hr>
+    </div>
 
           <div class="container-fluid">
        <div class="row">
          <div class = "col-sm-6">
            <!-- search results -->
-           <h1 id="searchResults">Your Results</h1>
+           <h3 class="display-5" style="text-align:center">Search Results</h3>
+           <hr>
            
             <% try { 
                 Database db = new Database();
@@ -364,12 +348,11 @@
                             
                         
                             %>
-                            <h1>test</h1>
                             <div class ="container p-3 my-3 border">
-                                <div class ="row">
-                                    <h1><%= result.getString("providerName") %></h1>
+
+                                    <h2><%= result.getString("providerName") %></h2>
                               <p><%= result.getString("providerStreetAddress") %></p>
-                                </div>
+
 
                             </div>
 
@@ -388,12 +371,11 @@
 
 
                         %>
-                        <h1>test</h1>
                         <div class ="container p-3 my-3 border">
-                            <div class ="row">
+
                                 <h1><%= result.getString("providerName") %></h1>
                           <p><%= result.getString("providerStreetAddress") %></p>
-                            </div>
+
 
                         </div>
 
@@ -409,14 +391,11 @@
 
 
                         %>
-                        <h1>test</h1>
                         <div class ="container p-3 my-3 border">
-                            <div class ="row">
                                 <h1><%= result.getString("providerName") %></h1>
                           <p><%= result.getString("providerStreetAddress") %></p>
                           <p><%= result.getString("DRG_Definition")%></p>
                           <p>Average medical care payments: $<%= result.getDouble("Average_Medicare_Payments")%></p>
-                            </div>
 
                         </div>
 
@@ -432,12 +411,10 @@
 
 
                         %>
-                        <h1>test</h1>
                         <div class ="container p-3 my-3 border">
-                            <div class ="row">
+
                                 <h1><%= result.getString("providerName") %></h1>
                           <p><%= result.getString("providerStreetAddress") %></p>
-                            </div>
 
                         </div>
 
@@ -475,9 +452,6 @@
          </div>
 
        </div>
-
-
-     </div>
 
 
    </body>
