@@ -319,18 +319,17 @@
            <!-- search results -->
            <h1 id="searchResults">Your Results</h1>
            
-            <% try { 
-                System.out.println("blob");
+            <% System.out.println("blob");
                 Database db = new Database();
-                ResultSet result = null;
+                
             String[] addressSearch = request.getParameterValues("addressInputSearch");
             //String[] nameSearch = request.getParameterValues("nameInputSearch");
             //String[] zipSearch = request.getParameterValues("zipInputSearch");
             //String[] procedureSearch = request.getParameterValues("procedureNameInputSearch");
             System.out.println("line 316");
-            if(addressSearch!=null ){
-                result = db.runSearchAddressP(addressSearch[0]);
-            
+            //if(addressSearch!=null ){
+                ResultSet result = db.runSearchAddressP(addressSearch[0]);
+            //}
             /*if(nameSearch!=null){
                 ResultSet resultName = db.runSearchNameP(nameSearch[0]);
             }
@@ -366,12 +365,8 @@
                     <% counter++;
                         }
                 }
-
-        } catch (SQLException ex) {
-                    Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-                }
             %>
-          
+           
 
            
 
