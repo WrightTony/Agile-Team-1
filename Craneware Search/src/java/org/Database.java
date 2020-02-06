@@ -209,7 +209,7 @@ public class Database {
         ResultSet result = null;
         try{
             Statement stmt = con.createStatement();
-            result = stmt.executeQuery("SELECT * FROM provider WHERE providerZipCode = 36301"); //the query being executed, selects all results in florida
+            result = stmt.executeQuery("SELECT * FROM provider"); //the query being executed, selects all results in florida
             
 
         } catch (SQLException ex) {

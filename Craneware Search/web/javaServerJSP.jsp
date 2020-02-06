@@ -320,56 +320,148 @@
            <h1 id="searchResults">Your Results</h1>
            
             <% try { 
-                System.out.println("blob");
                 Database db = new Database();
-                ResultSet result = null;
-            String[] addressSearch = request.getParameterValues("addressInputSearch");
-            //String[] nameSearch = request.getParameterValues("nameInputSearch");
-            //String[] zipSearch = request.getParameterValues("zipInputSearch");
-            //String[] procedureSearch = request.getParameterValues("procedureNameInputSearch");
-            System.out.println("line 316");
-            if(addressSearch!=null ){
-                result = db.runSearchAddressP(addressSearch[0]);
-            
-            /*if(nameSearch!=null){
-                ResultSet resultName = db.runSearchNameP(nameSearch[0]);
-            }
-            if(zipSearch!=null){
-                int i = Integer.parseInt(zipSearch[0]);
-                ResultSet resultZip = db.runSearchZipP(i);
-            }
-            if(nameSearch!=null){
-                ResultSet resultName = db.runSearchNameP(nameSearch[0]);
-            }*/
-            //int zipSearchInt = Integer.parseInt(zipSearch[0]);
-            //ResultSet result = db.runSearchMultipleP(procedureSearch[0], addressSearch[0], nameSearch[0], zipSearchInt);
-            //String[] conditions = db.parseCondition(result);
-            //String[] addresses = db.parseAddress(result);
-            //String[] provNames = db.parseProviderName(result);
-            //Double[] avgMeds = db.parseAvgMed(result);
-            int counter = 0;
-                while(result.next() && counter<10){
-                    
                 
-            %>
-            <h1>test</h1>
-                <div class ="container p-3 my-3 border">
-                    <div class ="row">
-                        <h1><%= result.getString("providerName") %></h1>
-                  <p><%= result.getString("providerStreetAddress") %></p>
-                  <p><%= result.getString("HRRDescription")%></p>
-                  <p>Average medical care payments: $<%= result.getDouble("Average_Medicare_Payments")%></p>
-                    </div>
-
-                </div>
-                    
-                    <% counter++;
-                        }
+                String[] addressSearch = new String[1];
+                String[] nameSearch = new String[1];
+                String[] zipSearch = new String[1];
+                String[] procedureSearch = new String[1];
+                addressSearch[0] = "";
+                nameSearch[0] = "";
+                zipSearch[0] = "";
+                procedureSearch[0] = "";
+                if(request.getParameterValues("addressInputSearch")!= null){
+                    addressSearch = request.getParameterValues("addressInputSearch");
                 }
+                
+                if(request.getParameterValues("nameInputSearch")!= null){
+                    nameSearch = request.getParameterValues("nameInputSearch");
+                }
+                
+                if(request.getParameterValues("zipInputSearch")!= null){
+                    zipSearch = request.getParameterValues("zipInputSearch");
+                }
+                
+                if(request.getParameterValues("procedureNameInputSearch")!= null){
+                    procedureSearch = request.getParameterValues("procedureNameInputSearch");
+                }
+                
+                if(request.getParameterValues("procedureCodeInputSearch")!= null){
+                    procedureSearch = request.getParameterValues("procedureCodeInputSearch");
+                }
+            
+            if(addressSearch[0]=="" && nameSearch[0]=="" && zipSearch[0]=="" && procedureSearch[0]==""){
+            }
+            else{
+                
+                //result = db.runSearchAddressP(addressSearch[0]);
+            int counter;
+            
+                    if(nameSearch[0]!=""){
+                        ResultSet result = db.runSearchNameP(nameSearch[0]);
+                        
+                        
+                        counter = 0;
+                        if(result!=null){
+                        while(result.next() && counter<10){
+
+
+                        %>
+                        <h1>test</h1>
+                        <div class ="container p-3 my-3 border">
+                            <div class ="row">
+                                <h1><%= result.getString("providerName") %></h1>
+                          <p><%= result.getString("providerStreetAddress") %></p>
+                          <p><%= result.getString("HRRDescription")%></p>
+                          <p>Average medical care payments: $<%= result.getDouble("Average_Medicare_Payments")%></p>
+                            </div>
+
+                        </div>
+
+                            <% counter++;
+                            }
+                        }
+                        
+                    }
+                    if(zipSearch[0]!=""){
+                        int i = Integer.parseInt(zipSearch[0]);
+                        ResultSet result = db.runSearchZipP(i);
+
+                        counter = 0;
+                        if(result!=null){
+                        while(result.next() && counter<10){
+
+
+                        %>
+                        <h1>test</h1>
+                        <div class ="container p-3 my-3 border">
+                            <div class ="row">
+                                <h1><%= result.getString("providerName") %></h1>
+                          <p><%= result.getString("providerStreetAddress") %></p>
+                          <p><%= result.getString("HRRDescription")%></p>
+                          <p>Average medical care payments: $<%= result.getDouble("Average_Medicare_Payments")%></p>
+                            </div>
+
+                        </div>
+
+                            <% counter++;
+                            }
+                        }
+                    }
+                    if(procedureSearch[0]!=""){
+                        ResultSet result = db.runSearchConditionP(procedureSearch[0]);
+                        counter = 0;
+                        if(result!=null){
+                        while(result.next() && counter<10){
+
+
+                        %>
+                        <h1>test</h1>
+                        <div class ="container p-3 my-3 border">
+                            <div class ="row">
+                                <h1><%= result.getString("providerName") %></h1>
+                          <p><%= result.getString("providerStreetAddress") %></p>
+                          <p><%= result.getString("HRRDescription")%></p>
+                          <p>Average medical care payments: $<%= result.getDouble("Average_Medicare_Payments")%></p>
+                            </div>
+
+                        </div>
+
+                            <% counter++;
+                            }
+                        }
+                    }
+                    if(addressSearch[0]!=""){
+                        ResultSet result = db.runSearchAddressP(addressSearch[0]);
+                        counter = 0;
+                        if(result!=null){
+                        while(result.next() && counter<10){
+
+
+                        %>
+                        <h1>test</h1>
+                        <div class ="container p-3 my-3 border">
+                            <div class ="row">
+                                <h1><%= result.getString("providerName") %></h1>
+                          <p><%= result.getString("providerStreetAddress") %></p>
+                          <p><%= result.getString("HRRDescription")%></p>
+                          <p>Average medical care payments: $<%= result.getDouble("Average_Medicare_Payments")%></p>
+                            </div>
+
+                        </div>
+
+                            <% counter++;
+                            }
+                        }
+                    }
+
+}
+
 
         } catch (SQLException ex) {
                     Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
                 }
+
             %>
           
 
