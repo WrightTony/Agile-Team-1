@@ -40,7 +40,7 @@
 <p style ="height:3px;"> </p>
     <h1 class="display-4" style="text-align:center">Search and compare hospitals acorss the US</h1>
 <p style ="height:3px;"> </p>
-    <div class="row">
+    <div class="row"> 
         
       <div class="card" style="width: 85rem; margin-left: auto; margin-right: auto;">
         <div class="card-body">
