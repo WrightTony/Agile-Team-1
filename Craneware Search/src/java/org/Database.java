@@ -472,6 +472,33 @@ public class Database {
             return null;
         }  
     }
+    
+    
+    /**
+     * This method runs a stored procedure to search a hospital name and returns the results 
+     * 
+     * @param city The city the user wants to look for
+     * @param con The connection to the db server
+     * @return the results of the query
+     */
+    public ResultSet runSearchNameP(String name){
+        try {
+            Connection con = setUpConnection();
+            CallableStatement stmt;
+            
+            stmt = con.prepareCall("{CALL search_name(?)}"); //prepares the procedure
+            stmt.setString(1, name); //sets the parameter to the state variable
+            
+            ResultSet result = stmt.executeQuery(); //runs query and sets it to the result
+            
+            
+            
+            return result;
+            } catch (SQLException ex) {
+                Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }  
+    }
   
     
     /**
@@ -565,6 +592,35 @@ public class Database {
             
             stmt = con.prepareCall("{CALL search_by_procedure(?)}"); //prepares the procedure
             stmt.setString(1, condition); //sets the parameter to the condition variable
+            
+            ResultSet result = stmt.executeQuery(); //runs query and sets it to the result
+        
+        
+            return result;
+            } catch (SQLException ex) {
+                Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }  
+    }
+    
+    
+    /**
+     * This method runs a stored procedure to search multiple columns and returns the results 
+     * 
+     * @param address The address the user wants to look for
+     * @param con The connection to the db server
+     * @return the results of the query
+     */
+    public ResultSet runSearchMultipleP(String condition, String address, String name, int zip){
+        try {
+            Connection con = setUpConnection();
+            CallableStatement stmt;
+            
+            stmt = con.prepareCall("{CALL search(?,?,?,?)}"); //prepares the procedure
+            stmt.setString(1, name); //sets the parameter to the name variable
+            stmt.setString(2, condition); //sets the parameter to the condition variable
+            stmt.setString(3, address); //sets the parameter to the address variable
+            stmt.setInt(4, zip); //sets the parameter to the zip variable
             
             ResultSet result = stmt.executeQuery(); //runs query and sets it to the result
         

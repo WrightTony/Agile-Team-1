@@ -134,7 +134,7 @@ public class DatabaseTest {
             String condition[] = new String[934];
             Database db = new Database();
             Connection con = db.setUpConnection();
-            ResultSet result = db.runSearchConditionP("DYSEQUILIBRIUM"); //call procedure method with city "montgomery"
+            ResultSet result = db.runSearchConditionP("DYSEQUILIBRIUM"); //call procedure method 
             
             int counter = 0;
             while(result.next()){

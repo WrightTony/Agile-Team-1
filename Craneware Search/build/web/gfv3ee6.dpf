@@ -8,14 +8,12 @@
       <description>Keep a copy of the generated servlet class' java code.</description>
     </property>
   </jsp-config>
-  
   <servlet>
-      <servlet-name>abc</servlet-name>
-      <servlet-class>org.search</servlet-class>
+    <servlet-name>abc</servlet-name>
+    <servlet-class>org.search</servlet-class>
   </servlet>
   <servlet-mapping>
-      <servlet-name>abc</servlet-name>
-      <url-pattern>/add</url-pattern>
+    <servlet-name>abc</servlet-name>
+    <url-pattern>/add</url-pattern>
   </servlet-mapping>
-  
 </glassfish-web-app>
