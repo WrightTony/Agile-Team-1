@@ -176,3 +176,64 @@ Tony:
   
 - Are there any imparements?
   JSP intergration is taking much longer than we anticipated, however we are confident we will have it working by tomorrow
+  
+  
+  # Day [5] - Scrum Meeting summary The Scrum Master for this meeting was Tony Wright
+
+Members Present: Jodie, Benjamin, Dimitar, Tony, Joel, Michael
+
+Members Not Present: None
+
+Summary of Conversation:
+
+Final meeting, preperation for the meeting and finalising what parts we can realistically aim to have implemented by the end of the day,
+
+Ben:
+- What did you do?
+  Completed test driven development video filming and adding to the db Java code, however did not have time to implement onto the website
+  
+- What will you do?
+  try to implement by the end of the day
+  
+- Are there any imparements?
+  None
+  
+Dimitar:
+- What did you do?
+  Implmeneted text resize and tested screen read functionality
+  
+- What will you do?
+  Help get as much functionality working on the website as possible
+  
+- Are there any imparements?
+  None
+
+Joel:
+- What did you do?
+  Location implementation almost finished
+  
+- What will you do?
+  Try to get it finished by the end of the day
+  
+- Are there any imparements?
+  None
+  
+Jodie:
+- What did you do?
+  Search functionality implemented on the website, however  ordered results by distance and price range have not been implemented
+  
+- What will you do?
+  Try to get ordered results functionality implemented on the website
+  
+- Are there any imparements?
+  None
+  
+Tony:
+- What did you do?
+  Fixed formatting issues to do with the website that occured because of the functionality implementation, completed intergrating the search functions with the HTML
+  
+- What will you do?
+  Continue working with Jodie implementing the other Java search functions
+  
+- Are there any imparements?
+  Now that there is a working implementation format we can work on getting other functionalities implemented, however, there won't be enough time to repeat this for each function
