@@ -456,7 +456,7 @@
                         counter = 0;
                         if(result!=null){
                         while(result.next() && counter<10){
-
+ 
 
                         %>
                         <div class ="container p-3 my-3 border">
