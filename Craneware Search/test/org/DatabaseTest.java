@@ -56,24 +56,6 @@ public class DatabaseTest {
 
     
     
-    
-    @Test
-    public void testRunSelectQuery(){
-        try{
-            int providerID = -1;
-            Database db = new Database();
-            Connection con = db.setUpConnection();
-            ResultSet result = db.getSelect();
-            while(result.next()){
-                providerID = result.getInt("providerID");
-            }
-            System.out.println("Provider ID: "+providerID);
-            assertEquals("Query run successfully",providerID,10001); //check if the correct result is returned
-        } catch (SQLException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
     @Test
     public void testSearchCity(){
         try{
