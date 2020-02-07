@@ -20,11 +20,11 @@
 </head>
 
 <body> 
-  <!-- page text resize button -->
+  <!-- page text resize button --> 
     
     <div id="resizeText">
         <button alt="Make taxt bigger" 
-   title="Make text bigger"
+   title="Make text bigger" 
    onclick="textResize(1);">
    A+
 </button>
