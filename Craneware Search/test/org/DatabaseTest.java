@@ -195,4 +195,29 @@ public class DatabaseTest {
         assertEquals("Query run successfully","1104.0",closest);
         
     }
+    
+    
+    @Test
+    public void testCurrLocation(){
+        try{
+            int procedureID[] = new int[8]; //create an array that will store the results
+            Database db = new Database();
+            ResultSet result = db.runCurrLocationP(36301, "Heart"); //call procedure method with a range between 3000 and 3100
+
+            int counter = 0;
+            while(result.next()){
+
+                    procedureID[counter] = result.getInt("procedureID"); //add providerID to a position in the array
+                    counter++;
+            }
+
+
+            assertEquals("Query result 1 run successfully",61956,procedureID[0]);
+            assertEquals("Query result 2 run successfully",71559,procedureID[1]);
+            assertEquals("Query result 3 run successfully",74301,procedureID[2]);
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
