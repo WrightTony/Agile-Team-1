@@ -30,6 +30,21 @@
   background-size: 100% 100%;">
     <!-- Image and text -->
     <nav class="navbar navbar-light bg-light">
+         <!-- page text resize button --> 
+    
+    <div id="resizeText">
+        <button alt="Make taxt bigger" 
+   title="Make text bigger" 
+   onclick="textResize(1);">
+   A+
+</button>
+<button alt="Make text smaller" 
+   title="Make text smaller" 
+   onclick="textResize(-1);">
+   A-
+</button>
+        
+    </div>
       <a class="navbar-brand" href="#">
         <img src="craneware_Logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         Craneware
@@ -487,6 +502,27 @@
          </div>
 
        </div>
+            
+            <script>
+function textResize(al) {
+var el = document.getElementsByTagName('body')[0]; 
+     // only one body in document
+  var fontStr = window
+     .getComputedStyle(el, null)
+     .getPropertyValue('font-size');
+  var fontSize = parseFloat(fontStr); 
+  el.style.fontSize = (fontSize + al) + 'px';
+    // Must be done separately for buttons:
+  var els = document.getElementsByTagName('button');
+  for (var i = 0; i < els.length; i++) {
+     fontStr = window
+        .getComputedStyle(els[i], null)
+        .getPropertyValue('font-size');
+     var fontSize = parseFloat(fontStr); 
+     els[i].style.fontSize = (fontSize + al) + 'px';
+  }
+ }
+</script>
 
 
    </body>
