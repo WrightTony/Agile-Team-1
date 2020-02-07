@@ -338,7 +338,6 @@
             if(addressSearch[0]=="" && nameSearch[0]=="" && zipSearch[0]=="" && procedureSearch[0]==""){
             }
             else{
-                
                 //result = db.runSearchAddressP(addressSearch[0]);
             int counter;
                     if(maxPrice[0]!=""){
@@ -346,7 +345,9 @@
                         ResultSet result = db.runRestrictPriceP(0, maxPriceDouble);
                         
                         counter = 0;
+                         
                         if(result!=null){
+                           
                         while(result.next() && counter<10){
 
 
