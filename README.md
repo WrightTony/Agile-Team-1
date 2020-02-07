@@ -12,3 +12,4 @@ Tony Wright - Matriculation number: 170016265
 
 
 # all software code is in the software_code branch
+# live link to website: http://cranewaregroup1-env.8bzusptjth.us-east-2.elasticbeanstalk.com/
