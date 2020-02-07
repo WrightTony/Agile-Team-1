@@ -131,30 +131,24 @@
                 document.getElementById('zipInputFilter').value = '';
               }
               </script>
-
-              <form class="form-inline" style="margin-left:2rem">
+              <form class="form-inline" style="margin-left:2rem" method="get">
 
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by hospital name..." aria-label="Search" style="width: 15rem; margin-left: 0.5rem;" id="nameInputFilter">
+                  <input class="form-control" type="text" placeholder="Search by hospital name..." aria-label="Search" style="width: 15rem; margin-left: 0.5rem;" id="nameInputSearch" name="nameInputSearch">
                 </div>
 
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by address..." aria-label="Search" style="width: 15rem; margin-left: 0.5rem;" id="addressInputFilter">
+                  <input class="form-control" type="text" placeholder="address..." aria-label="Search" style="width: 15rem; margin-left: 0.5rem;" id="addressInputSearch" name="addressInputSearch">
                 </div>
 
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by zip code..." aria-label="Search" style="width: 15rem; margin-left: 0.5rem;" id="zipInputFilter">
+                  <input class="form-control" type="text" placeholder="zip code..." aria-label="Search" style="width: 15rem; margin-left: 0.5rem;" id="zipInputSearch" name="zipInputSearch">
                 </div>
-
                 <div class="md-form mt-0">
-                  <input class="form-control" type="text" placeholder="Search by procedure name/code..." aria-label="Search" style="width: 15rem; margin-left: 0.5rem;" id="procedureNameInputFilter">
+                  <input class="form-control" type="text" placeholder="procedure name..." aria-label="Search" style="width: 15rem; margin-left: 0.5rem;" id="procedureNameInputSearch" name="procedureNameInputSearch">
                 </div>
 
-              </form>
-
-              <p></p>
-
-              <h4>Filter</h4>
+               
 
               <!-- select price range -->
 
@@ -162,12 +156,12 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                   </div>
-                  <input type="text" class="form-control" placeholder="Maximum Price..." aria-label="Amount (to the nearest pound)">
+                  <input type="text" class="form-control" placeholder="Maximum Price..." aria-label="Amount (to the nearest pound)" name="maxPrice">
                   <div class="input-group-append">
                     <span class="input-group-text">.00</span>
                   </div>
                 </div>
-
+                <br/>
                 <p></p>
 
 
@@ -178,10 +172,11 @@
                   <span class="input-group-text" id="basic-addon2">Miles</span>
                 </div>
               </div>
-
+                <br/>
                 <p></p>
+              
+               
 
-                <h4>Sort (pick one)</h4>
 
                 <!-- dropdown select highest to lowest price -->
                 <div class="input-group mb-3">
@@ -210,12 +205,16 @@
                   </select>
                 </div>
 
-                <!-- Search button -->
-                <p style = "text-align:center;"><button type="submit" class="btn btn-outline-primary" style="width:220px">Search</button></p>
+               
                 <p></p>
+                
+                <!-- Search button -->
+                <p style = "text-align:center;"><button type="submit" value="javaServerJSP" class="btn btn-outline-primary" href="#filter" style="width:220px; margin-left: 0.5rem; margin-top: 1rem" >Search</button></p>
 
-
+                <p></p>
+                
                 </div>
+             </form>
 
             <!-- Best For You tab -->
             <div class="tab-pane fade" id="bestForYou" role="tabpanel" aria-labelledby="bestForYou-tab">
@@ -310,10 +309,15 @@
                 String[] nameSearch = new String[1];
                 String[] zipSearch = new String[1];
                 String[] procedureSearch = new String[1];
+                String[] maxPrice = new String[1];
                 addressSearch[0] = "";
+                maxPrice[0] = "";
                 nameSearch[0] = "";
                 zipSearch[0] = "";
                 procedureSearch[0] = "";
+                if(request.getParameter("maxPrice")!=null){
+                    maxPrice = request.getParameterValues("maxPrice");
+                }
                 if(request.getParameterValues("addressInputSearch")!= null){
                     addressSearch = request.getParameterValues("addressInputSearch");
                 }
@@ -337,7 +341,29 @@
                 
                 //result = db.runSearchAddressP(addressSearch[0]);
             int counter;
-            
+                    if(maxPrice[0]!=""){
+                        double maxPriceDouble = Double.parseDouble(maxPrice[0]);
+                        ResultSet result = db.runRestrictPriceP(0, maxPriceDouble);
+                        
+                        counter = 0;
+                        if(result!=null){
+                        while(result.next() && counter<10){
+
+
+                        %>
+                        <div class ="container p-3 my-3 border">
+                                <h1><%= result.getString("providerName") %></h1>
+                          <p><%= result.getString("providerStreetAddress") %></p>
+                          <p><%= result.getString("DRG_Definition")%></p>
+                          <p>Average medical care payments: $<%= result.getDouble("Average_Medicare_Payments")%></p>
+
+                        </div>
+
+                            <% counter++;
+                            }
+                        }
+                        
+                    }
                     if(nameSearch[0]!=""){
                         ResultSet result = db.runSearchNameP(nameSearch[0]);
                         
@@ -352,6 +378,8 @@
 
                                     <h2><%= result.getString("providerName") %></h2>
                               <p><%= result.getString("providerStreetAddress") %></p>
+                              <p><%= result.getString("providerCity") %></p>
+                              <p><%= result.getString("providerState") %></p>
 
 
                             </div>
@@ -374,7 +402,9 @@
                         <div class ="container p-3 my-3 border">
 
                                 <h1><%= result.getString("providerName") %></h1>
-                          <p><%= result.getString("providerStreetAddress") %></p>
+                                <p><%= result.getString("providerStreetAddress") %></p>
+                                <p><%= result.getString("providerCity") %></p>
+                                <p><%= result.getString("providerState") %></p>
 
 
                         </div>
@@ -394,6 +424,8 @@
                         <div class ="container p-3 my-3 border">
                                 <h1><%= result.getString("providerName") %></h1>
                           <p><%= result.getString("providerStreetAddress") %></p>
+                          <p><%= result.getString("providerCity") %></p>
+                              <p><%= result.getString("providerState") %></p>
                           <p><%= result.getString("DRG_Definition")%></p>
                           <p>Average medical care payments: $<%= result.getDouble("Average_Medicare_Payments")%></p>
 
@@ -414,7 +446,9 @@
                         <div class ="container p-3 my-3 border">
 
                                 <h1><%= result.getString("providerName") %></h1>
-                          <p><%= result.getString("providerStreetAddress") %></p>
+                                <p><%= result.getString("providerStreetAddress") %></p>
+                                <p><%= result.getString("providerCity") %></p>
+                                <p><%= result.getString("providerState") %></p>
 
                         </div>
 

@@ -21,7 +21,6 @@ import java.util.logging.Logger;
  * @author jodielaurenson
  */
 public class Database {
-    String[][] list = {{"871 - SEPTICEMIA OR SEVERE SEPSIS W/O MV >96 HOURS W MCC", "670108", "BAYLOR SCOTT & WHITE MEDICAL CENTER - MARBLE FALLS", "810 W HIGHWAY 71", "MARBLE FALLS", "TX", "78654", "TX - Austin", "89", "34461.67", "13104.79", "7695.337", ""}, {"871 - SEPTICEMIA OR SEVERE SEPSIS W/O MV >96 HOURS W MCC", "670120", "THE HOSPITALS OF PROVIDENCE TRANSMOUNTAIN CAMPUS", "2000 TRANSMOUNTAIN RD", "EL PASO", "TX", "79911", "TX - El Paso", "22", "147342.18", "18504.95", "13261.09", ""}, {"470 - MAJOR JOINT REPLACEMENT OR REATTACHMENT OR LOWER EXTREMITY W/O MCC", "670116", "WISE HEALTH SYSTEM", "3200 NORTH TARRANT PARKWAY", "FORT WORTH", "TX", "76177", "TX - Fort Worth", "30", "94373.47", "13979.7", "11226.63", ""}, {"689 - KIDNEY & URINARY TRACT INFECTIONS W MCC", "670108", "BAYLOR SCOTT & WHITE MEDICAL CENTER - MARBLE FALLS", "810 W HIGHWAY 71", "MARBLE FALLS", "TX", "78654", "TX - Austin", "13", "21297.62", "8200", "3424.308", ""}, {"190 - CHRONIC OBSTRUCTIVE PULMONARY DISEASE W MCC", "670120", "THE HOSPITALS OF PROVIDENCE TRANSMOUNTAIN CAMPUS", "2000 TRANSMOUNTAIN RD", "EL PASO", "TX", "79911", "TX - El Paso", "12", "64578.42", "8526.75", "7649.33", ""}};
     
     String test;
     int counter;
@@ -649,6 +648,32 @@ public class Database {
             stmt = con.prepareCall("{CALL restrict_price(?,?)}"); //prepares the procedure
             stmt.setDouble(1, min); //sets the first parameter to the minimum variable
             stmt.setDouble(2, max); //sets the second parameter to the maximum variable
+            System.out.println("MAX: "+max);
+            ResultSet result = stmt.executeQuery(); //runs query and sets it to the result
+        
+        
+            return result;
+            } catch (SQLException ex) {
+                Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }  
+    }
+    
+    /**
+     * this method is called when the user wants to find procedures close to them
+     * 
+     * @param zip their current zip code
+     * @param procedure the procedure they want to find
+     * @return the result of query
+     */
+    public ResultSet runCurrLocationP(int zip, String procedure){
+        try {
+            Connection con = setUpConnection();
+            CallableStatement stmt;
+            
+            stmt = con.prepareCall("{CALL curr_location_procedure(?,?)}"); //prepares the procedure
+            stmt.setInt(1, zip); //sets the first parameter to the minimum variable
+            stmt.setString(2, procedure); //sets the second parameter to the maximum variable
             
             ResultSet result = stmt.executeQuery(); //runs query and sets it to the result
         

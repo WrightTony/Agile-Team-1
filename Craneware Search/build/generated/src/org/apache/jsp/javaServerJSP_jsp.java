@@ -146,12 +146,9 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                  <input class=\"form-control\" type=\"text\" placeholder=\"procedure name...\" aria-label=\"Search\" style=\"width: 15rem; margin-left: 0.5rem;\" id=\"procedureNameInputSearch\" name=\"procedureNameInputSearch\">\n");
       out.write("                </div>\n");
       out.write("\n");
-      out.write("                <div class=\"md-form mt-0\">\n");
-      out.write("                  <input class=\"form-control\" type=\"text\" placeholder=\"procedure code...\" aria-label=\"Search\" style=\"width: 15rem; margin-left: 0.5rem\" id=\"procedureCodeInputSearch\" name=\"procedureCodeInputSearch\">\n");
-      out.write("                </div>\n");
       out.write("               <p></p>\n");
       out.write("                  <!-- Search button -->\n");
-      out.write("              <p style = \"text-align:center;\"><button type=\"submit\" value=\"javaServerJSP\" class=\"btn btn-outline-primary\" style=\"width:220px\">Search</button></p>\n");
+      out.write("              <p style = \"text-align:center;\"><button type=\"submit\" value=\"javaServerJSP\" class=\"btn btn-outline-primary\" style=\"width:220px; margin-left: 0.5rem; margin-top: 1rem\" >Search</button></p>\n");
       out.write("              </form>\n");
       out.write("\n");
       out.write("              \n");
@@ -184,68 +181,52 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                document.getElementById('zipInputFilter').value = '';\n");
       out.write("              }\n");
       out.write("              </script>\n");
-      out.write("\n");
-      out.write("              <form class=\"form-inline\" style=\"margin-left:2rem\">\n");
+      out.write("              <form class=\"form-inline\" style=\"margin-left:2rem\" method=\"get\">\n");
       out.write("\n");
       out.write("                <div class=\"md-form mt-0\">\n");
-      out.write("                  <input class=\"form-control\" type=\"text\" placeholder=\"Search by hospital name...\" aria-label=\"Search\" style=\"width: 15rem; margin-left: 0.5rem;\" id=\"nameInputFilter\">\n");
+      out.write("                  <input class=\"form-control\" type=\"text\" placeholder=\"Search by hospital name...\" aria-label=\"Search\" style=\"width: 15rem; margin-left: 0.5rem;\" id=\"nameInputSearch\" name=\"nameInputSearch\">\n");
       out.write("                </div>\n");
       out.write("\n");
       out.write("                <div class=\"md-form mt-0\">\n");
-      out.write("                  <input class=\"form-control\" type=\"text\" placeholder=\"Search by address...\" aria-label=\"Search\" style=\"width: 15rem; margin-left: 0.5rem;\" id=\"addressInputFilter\">\n");
+      out.write("                  <input class=\"form-control\" type=\"text\" placeholder=\"address...\" aria-label=\"Search\" style=\"width: 15rem; margin-left: 0.5rem;\" id=\"addressInputSearch\" name=\"addressInputSearch\">\n");
       out.write("                </div>\n");
       out.write("\n");
       out.write("                <div class=\"md-form mt-0\">\n");
-      out.write("                  <input class=\"form-control\" type=\"text\" placeholder=\"Search by zip code...\" aria-label=\"Search\" style=\"width: 15rem; margin-left: 0.5rem;\" id=\"zipInputFilter\">\n");
+      out.write("                  <input class=\"form-control\" type=\"text\" placeholder=\"zip code...\" aria-label=\"Search\" style=\"width: 15rem; margin-left: 0.5rem;\" id=\"zipInputSearch\" name=\"zipInputSearch\">\n");
       out.write("                </div>\n");
-      out.write("\n");
       out.write("                <div class=\"md-form mt-0\">\n");
-      out.write("                  <input class=\"form-control\" type=\"text\" placeholder=\"Search by procedure name...\" aria-label=\"Search\" style=\"width: 15rem; margin-left: 0.5rem;\" id=\"procedureNameInputFilter\">\n");
+      out.write("                  <input class=\"form-control\" type=\"text\" placeholder=\"procedure name...\" aria-label=\"Search\" style=\"width: 15rem; margin-left: 0.5rem;\" id=\"procedureNameInputSearch\" name=\"procedureNameInputSearch\">\n");
       out.write("                </div>\n");
       out.write("\n");
-      out.write("                <div class=\"md-form mt-0\">\n");
-      out.write("                  <input class=\"form-control\" type=\"text\" placeholder=\"Search by procedure code...\" aria-label=\"Search\" style=\"width: 15rem; margin-left: 0.5rem\" id=\"procedureCodeInputFilter\">\n");
-      out.write("                </div>\n");
-      out.write("              </form>\n");
+      out.write("               \n");
       out.write("\n");
-      out.write("              <p></p>\n");
-      out.write("\n");
-      out.write("              <h4>Filter</h4>\n");
-      out.write("\n");
-      out.write("              <!-- dropdown select price range -->\n");
+      out.write("              <!-- select price range -->\n");
       out.write("\n");
       out.write("                <div class=\"input-group mb-3\">\n");
       out.write("                  <div class=\"input-group-prepend\">\n");
       out.write("                    <span class=\"input-group-text\">$</span>\n");
-      out.write("                  <div class=\"input-group mb-3\">\n");
-      out.write("                    <div class=\"input-group-prepend\">\n");
-      out.write("                      <span class=\"input-group-text\">$</span>\n");
-      out.write("                    </div>\n");
-      out.write("                    <input type=\"text\" class=\"form-control\" placeholder=\"Maximum Price...\" aria-label=\"Amount (to the nearest pound)\">\n");
-      out.write("                    <div class=\"input-group-append\">\n");
-      out.write("                      <span class=\"input-group-text\">.00</span>\n");
-      out.write("                    </div>\n");
       out.write("                  </div>\n");
-      out.write("                  <input type=\"text\" class=\"form-control\" placeholder=\"Maximum Price...\" aria-label=\"Amount (to the nearest pound)\">\n");
+      out.write("                  <input type=\"text\" class=\"form-control\" placeholder=\"Maximum Price...\" aria-label=\"Amount (to the nearest pound)\" name=\"maxPrice\">\n");
       out.write("                  <div class=\"input-group-append\">\n");
       out.write("                    <span class=\"input-group-text\">.00</span>\n");
       out.write("                  </div>\n");
       out.write("                </div>\n");
-      out.write("\n");
+      out.write("                <br/>\n");
       out.write("                <p></p>\n");
       out.write("\n");
       out.write("\n");
-      out.write("                <!-- dropdown select distance range -->\n");
+      out.write("                <!-- select distance range -->\n");
       out.write("              <div class=\"input-group mb-3\">\n");
       out.write("                <input type=\"text\" class=\"form-control\" placeholder=\"Maximum Distance...\" aria-label=\"Maximum Distance\" aria-describedby=\"basic-addon2\">\n");
       out.write("                <div class=\"input-group-append\">\n");
       out.write("                  <span class=\"input-group-text\" id=\"basic-addon2\">Miles</span>\n");
       out.write("                </div>\n");
       out.write("              </div>\n");
-      out.write("\n");
+      out.write("                <br/>\n");
       out.write("                <p></p>\n");
+      out.write("              \n");
+      out.write("               \n");
       out.write("\n");
-      out.write("                <h4>Sort (pick one)</h4>\n");
       out.write("\n");
       out.write("                <!-- dropdown select highest to lowest price -->\n");
       out.write("                <div class=\"input-group mb-3\">\n");
@@ -274,13 +255,16 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                  </select>\n");
       out.write("                </div>\n");
       out.write("\n");
-      out.write("                <!-- Search button -->\n");
-      out.write("                <p style = \"text-align:center;\"><button type=\"submit\" class=\"btn btn-outline-primary\" style=\"width:220px\">Search</button></p>\n");
+      out.write("               \n");
       out.write("                <p></p>\n");
+      out.write("                \n");
+      out.write("                <!-- Search button -->\n");
+      out.write("                <p style = \"text-align:center;\"><button type=\"submit\" value=\"javaServerJSP\" class=\"btn btn-outline-primary\" href=\"#filter\" style=\"width:220px; margin-left: 0.5rem; margin-top: 1rem\" >Search</button></p>\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("            </div>\n");
+      out.write("                <p></p>\n");
+      out.write("                \n");
+      out.write("                </div>\n");
+      out.write("             </form>\n");
       out.write("\n");
       out.write("            <!-- Best For You tab -->\n");
       out.write("            <div class=\"tab-pane fade\" id=\"bestForYou\" role=\"tabpanel\" aria-labelledby=\"bestForYou-tab\">\n");
@@ -315,9 +299,6 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                  <input class=\"form-control\" type=\"text\" placeholder=\"Search by procedure name...\" aria-label=\"Search\" style=\"width: 18rem; margin-left: 0.5rem;\" id=\"procedureNameInput\">\n");
       out.write("                </div>\n");
       out.write("\n");
-      out.write("                <div class=\"md-form mt-0\">\n");
-      out.write("                  <input class=\"form-control\" type=\"text\" placeholder=\"Search by procedure code...\" aria-label=\"Search\" style=\"width: 18rem; margin-left: 0.5rem\" id=\"procedureCodeInput\">\n");
-      out.write("                </div>\n");
       out.write("              </form>\n");
       out.write("\n");
       out.write("              <p></p>\n");
@@ -350,7 +331,7 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\n");
       out.write("\n");
       out.write("            </div>\n");
-      out.write("          </div>\n");
+      out.write("          \n");
       out.write("\n");
       out.write("          </div>\n");
       out.write("            </div>\n");
@@ -362,12 +343,14 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("          </div>\n");
       out.write("\n");
       out.write("          <hr>\n");
+      out.write("    </div>\n");
       out.write("\n");
       out.write("          <div class=\"container-fluid\">\n");
       out.write("       <div class=\"row\">\n");
       out.write("         <div class = \"col-sm-6\">\n");
       out.write("           <!-- search results -->\n");
-      out.write("           <h1 id=\"searchResults\">Your Results</h1>\n");
+      out.write("           <h3 class=\"display-5\" style=\"text-align:center\">Search Results</h3>\n");
+      out.write("           <hr>\n");
       out.write("           \n");
       out.write("            ");
  try { 
@@ -377,10 +360,15 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
                 String[] nameSearch = new String[1];
                 String[] zipSearch = new String[1];
                 String[] procedureSearch = new String[1];
+                String[] maxPrice = new String[1];
                 addressSearch[0] = "";
+                maxPrice[0] = "";
                 nameSearch[0] = "";
                 zipSearch[0] = "";
                 procedureSearch[0] = "";
+                if(request.getParameter("maxPrice")!=null){
+                    maxPrice = request.getParameterValues("maxPrice");
+                }
                 if(request.getParameterValues("addressInputSearch")!= null){
                     addressSearch = request.getParameterValues("addressInputSearch");
                 }
@@ -404,7 +392,39 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
                 
                 //result = db.runSearchAddressP(addressSearch[0]);
             int counter;
-            
+                    if(maxPrice[0]!=""){
+                        double maxPriceDouble = Double.parseDouble(maxPrice[0]);
+                        ResultSet result = db.runRestrictPriceP(0, maxPriceDouble);
+                        
+                        counter = 0;
+                        if(result!=null){
+                        while(result.next() && counter<10){
+
+
+                        
+      out.write("\n");
+      out.write("                        <div class =\"container p-3 my-3 border\">\n");
+      out.write("                                <h1>");
+      out.print( result.getString("providerName") );
+      out.write("</h1>\n");
+      out.write("                          <p>");
+      out.print( result.getString("providerStreetAddress") );
+      out.write("</p>\n");
+      out.write("                          <p>");
+      out.print( result.getString("DRG_Definition"));
+      out.write("</p>\n");
+      out.write("                          <p>Average medical care payments: $");
+      out.print( result.getDouble("Average_Medicare_Payments"));
+      out.write("</p>\n");
+      out.write("\n");
+      out.write("                        </div>\n");
+      out.write("\n");
+      out.write("                            ");
+ counter++;
+                            }
+                        }
+                        
+                    }
                     if(nameSearch[0]!=""){
                         ResultSet result = db.runSearchNameP(nameSearch[0]);
                         
@@ -416,16 +436,21 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
                         
                             
       out.write("\n");
-      out.write("                            <h1>test</h1>\n");
       out.write("                            <div class =\"container p-3 my-3 border\">\n");
-      out.write("                                <div class =\"row\">\n");
-      out.write("                                    <h1>");
+      out.write("\n");
+      out.write("                                    <h2>");
       out.print( result.getString("providerName") );
-      out.write("</h1>\n");
+      out.write("</h2>\n");
       out.write("                              <p>");
       out.print( result.getString("providerStreetAddress") );
       out.write("</p>\n");
-      out.write("                                </div>\n");
+      out.write("                              <p>");
+      out.print( result.getString("providerCity") );
+      out.write("</p>\n");
+      out.write("                              <p>");
+      out.print( result.getString("providerState") );
+      out.write("</p>\n");
+      out.write("\n");
       out.write("\n");
       out.write("                            </div>\n");
       out.write("\n");
@@ -446,16 +471,21 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
 
                         
       out.write("\n");
-      out.write("                        <h1>test</h1>\n");
       out.write("                        <div class =\"container p-3 my-3 border\">\n");
-      out.write("                            <div class =\"row\">\n");
+      out.write("\n");
       out.write("                                <h1>");
       out.print( result.getString("providerName") );
       out.write("</h1>\n");
-      out.write("                          <p>");
+      out.write("                                <p>");
       out.print( result.getString("providerStreetAddress") );
       out.write("</p>\n");
-      out.write("                            </div>\n");
+      out.write("                                <p>");
+      out.print( result.getString("providerCity") );
+      out.write("</p>\n");
+      out.write("                                <p>");
+      out.print( result.getString("providerState") );
+      out.write("</p>\n");
+      out.write("\n");
       out.write("\n");
       out.write("                        </div>\n");
       out.write("\n");
@@ -473,9 +503,7 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
 
                         
       out.write("\n");
-      out.write("                        <h1>test</h1>\n");
       out.write("                        <div class =\"container p-3 my-3 border\">\n");
-      out.write("                            <div class =\"row\">\n");
       out.write("                                <h1>");
       out.print( result.getString("providerName") );
       out.write("</h1>\n");
@@ -483,12 +511,17 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.print( result.getString("providerStreetAddress") );
       out.write("</p>\n");
       out.write("                          <p>");
+      out.print( result.getString("providerCity") );
+      out.write("</p>\n");
+      out.write("                              <p>");
+      out.print( result.getString("providerState") );
+      out.write("</p>\n");
+      out.write("                          <p>");
       out.print( result.getString("DRG_Definition"));
       out.write("</p>\n");
       out.write("                          <p>Average medical care payments: $");
       out.print( result.getDouble("Average_Medicare_Payments"));
       out.write("</p>\n");
-      out.write("                            </div>\n");
       out.write("\n");
       out.write("                        </div>\n");
       out.write("\n");
@@ -506,16 +539,20 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
 
                         
       out.write("\n");
-      out.write("                        <h1>test</h1>\n");
       out.write("                        <div class =\"container p-3 my-3 border\">\n");
-      out.write("                            <div class =\"row\">\n");
+      out.write("\n");
       out.write("                                <h1>");
       out.print( result.getString("providerName") );
       out.write("</h1>\n");
-      out.write("                          <p>");
+      out.write("                                <p>");
       out.print( result.getString("providerStreetAddress") );
       out.write("</p>\n");
-      out.write("                            </div>\n");
+      out.write("                                <p>");
+      out.print( result.getString("providerCity") );
+      out.write("</p>\n");
+      out.write("                                <p>");
+      out.print( result.getString("providerState") );
+      out.write("</p>\n");
       out.write("\n");
       out.write("                        </div>\n");
       out.write("\n");
@@ -555,9 +592,6 @@ public final class javaServerJSP_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("         </div>\n");
       out.write("\n");
       out.write("       </div>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("     </div>\n");
       out.write("\n");
       out.write("\n");
       out.write("   </body>\n");
